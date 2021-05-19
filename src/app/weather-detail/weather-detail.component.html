@@ -1,6 +1,6 @@
-<section>
+<section class="m-4">
   <div class="card-deck">
-    <div *ngFor="let next of forecastData | keyvalue" class="card">
+    <div *ngFor="let next of forecastData | keyvalue" class="card box-shadow">
       <div class="card-body text-center">
         <p class="card-text">
           Date: {{ next.key | date }}
@@ -15,7 +15,7 @@
           Temperate: {{ next.value.main.temp }} <sup>°</sup>C
         </p>
         <figure>
-          <img src="{{imgBaseUrl}}/{{next.value.weather[0].icon}}@2x.png"
+          <img src="{{imgBaseUrl}}/{{next.value.weather[0].icon}}.png"
             alt="{{next.value.weather[0]?.description}}">
           <figcaption>{{ next.value.weather[0]?.description }}</figcaption>
         </figure>

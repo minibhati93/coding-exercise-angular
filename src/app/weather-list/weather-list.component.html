@@ -1,5 +1,5 @@
-<section>
-  <div class="card-deck" >
+<section class="m-4">
+  <div class="card-deck">
     <div  *ngFor="let city of weatherData" class="card box-shadow">
       <div class="card-body text-center" (click)="openDetail(city)">
         <p>{{city.name}}, {{city.sys.country}}</p>
@@ -9,7 +9,7 @@
         <p>Sunrise</p>
         <p>Sunset</p>
         <figure>
-          <img src="{{imgBaseUrl}}/{{city.weather[0].icon}}@2x.png"
+          <img src="{{imgBaseUrl}}/{{city.weather[0].icon}}.png"
             alt="{{city.weather[0]?.description}}">
           <figcaption>{{ city.weather[0]?.description }}</figcaption>
         </figure>

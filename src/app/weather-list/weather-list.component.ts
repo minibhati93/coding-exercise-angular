@@ -18,6 +18,7 @@ export class WeatherListComponent implements OnInit, OnDestroy {
               private router: Router) { }
 
   ngOnInit(): void {
+    this.weatherService.setCityName(null);
     this.subscription = this.weatherService.getDataOfCities().subscribe((rspData:any) => {
       this.weatherData = rspData.list;
       console.log(this.weatherData);

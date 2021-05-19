@@ -21,9 +21,10 @@ export class WeatherDetailComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.cityId = this.route.snapshot.params.id;
     this.subscription = this.weatherService.getForecastByCity(this.cityId).
-      subscribe( (data:any) =>
-        this.populateForecastData(data.list),
-        error => {
+      subscribe( (data:any) => {
+        this.weatherService.setCityName(data.city.name + ','+ data.city.country);
+        this.populateForecastData(data.list);
+      }, error => {
         console.log(error);
       });
   }
