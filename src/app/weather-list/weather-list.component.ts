@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { WeatherService } from '../service/weather-service/weather.service'
 
@@ -11,9 +12,10 @@ export class WeatherListComponent implements OnInit, OnDestroy {
 
   weatherData = [];
   imgBaseUrl: string = 'https://openweathermap.org/img/wn/';
-  subscription: Subscription;
+  private subscription: Subscription;
 
-  constructor(private weatherService: WeatherService) { }
+  constructor(private weatherService: WeatherService,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.subscription = this.weatherService.getDataOfCities().subscribe((rspData:any) => {
@@ -22,6 +24,10 @@ export class WeatherListComponent implements OnInit, OnDestroy {
     }, error => {
       console.log(error);
     });
+  }
+
+  openDetail(city) {
+    this.router.navigate([`/city/${city.id}`]);
   }
 
   ngOnDestroy() {
