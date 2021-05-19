@@ -11,7 +11,7 @@ import { WeatherService } from '../service/weather-service/weather.service'
 export class WeatherListComponent implements OnInit, OnDestroy {
 
   weatherData = [];
-  imgBaseUrl: string = 'https://openweathermap.org/img/wn/';
+  private imgBaseUrl: string = 'https://openweathermap.org/img/wn/';
   private subscription: Subscription;
 
   constructor(private weatherService: WeatherService,

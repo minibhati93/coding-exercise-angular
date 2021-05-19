@@ -1,1 +1,25 @@
-<p>weather-detail works! {{ cityId }}</p>
+<section>
+  <div class="card-deck">
+    <div *ngFor="let next of forecastData | keyvalue" class="card">
+      <div class="card-body text-center">
+        <p class="card-text">
+          Date: {{ next.key | date }}
+        </p>
+        <p class="card-text">
+          Day: {{ next.value.day }}
+        </p>
+        <p class="card-text">
+          Sea Level: {{ next.value.main.sea_level }}
+        </p>
+        <p class="card-text">
+          Temperate: {{ next.value.main.temp }} <sup>°</sup>C
+        </p>
+        <figure>
+          <img src="{{imgBaseUrl}}/{{next.value.weather[0].icon}}@2x.png"
+            alt="{{next.value.weather[0]?.description}}">
+          <figcaption>{{ next.value.weather[0]?.description }}</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>

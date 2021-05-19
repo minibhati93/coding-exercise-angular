@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { WeatherListComponent } from './weather-list/weather-list.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { WeatherDetailComponent } from './weather-detail/weather-detail.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeatherListComponent,
     ErrorPageComponent,
-    WeatherDetailComponent
+    WeatherDetailComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
