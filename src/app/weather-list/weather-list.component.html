@@ -2,12 +2,12 @@
   <div class="card-deck">
     <div  *ngFor="let city of weatherData" class="card box-shadow">
       <div class="card-body text-center" (click)="openDetail(city)">
-        <p>{{city.name}}, {{city.sys.country}}</p>
-        <p>{{city.main.temp}}<sup>°C</sup></p>
+        <p class="city-name">{{city.name}}, {{city.sys.country}}</p>
+        <p class="city-temp">
+          <span>{{city.main.temp}}</span><sup>°C</sup>
+        </p>
         <p>Humidity: {{city.main.humidity}}</p>
-        <p>Feels like: {{city.main.feels_like}}</p>
-        <p>Sunrise</p>
-        <p>Sunset</p>
+        <p>Feels like: {{city.main.feels_like}}<sup>°C</sup></p>
         <figure>
           <img src="{{imgBaseUrl}}/{{city.weather[0].icon}}.png"
             alt="{{city.weather[0]?.description}}">
