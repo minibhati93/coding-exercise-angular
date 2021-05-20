@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs/internal/Subscription';
 import { WeatherService } from '../service/weather-service/weather.service';
 
 @Component({
@@ -38,7 +38,6 @@ export class WeatherDetailComponent implements OnInit, OnDestroy {
       }
       return list;
     }, {});
-    console.log(this.forecastData);
   }
 
   getDayInfo(data) {
