@@ -24,8 +24,6 @@ export class WeatherDetailComponent implements OnInit, OnDestroy {
       subscribe( (data:any) => {
         this.weatherService.setCityName(data.city.name + ','+ data.city.country);
         this.populateForecastData(data.list);
-      }, error => {
-        console.log(error);
       });
   }
 

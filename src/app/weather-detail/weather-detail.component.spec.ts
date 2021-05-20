@@ -9,10 +9,9 @@ describe('WeatherDetailComponent', () => {
   let fixture: ComponentFixture<WeatherDetailComponent>;
   const fakeActivatedRoute =  {
     snapshot: {
-       params: {id: 1234}
+      params: {id: 1268266}
     }
   };
-
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -32,5 +31,10 @@ describe('WeatherDetailComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should return "Thursday" for 20th May 2021', () => {
+    const day = component.getDayInfo(1621512000);
+    expect(day).toEqual('Thursday');
   });
 });
