@@ -1,7 +1,7 @@
 export const mockData = {
   weather: {
     cod: "200",
-    count: 5,
+    count: 2,
     message: "accurate",
     list : [
       {
