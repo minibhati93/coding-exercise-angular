@@ -10,7 +10,6 @@ export class WeatherService {
   private API_KEY = '3f510b12aa59b39aa37a1edbe57c8809';
   private WEATHER_BASE_URL = 'http://api.openweathermap.org';
   public city$ = new BehaviorSubject('');
-  public error$ = new BehaviorSubject({});
 
   constructor(private http: HttpClient) { }
 
